@@ -4,10 +4,7 @@
 $_SITE_BASE_URL = "http://localhost/quize_engine"; // do not include end slash
 $_SITE_BASE_PATH = "";
 
-// database details
-$DB_HOST = "";
-$DB_USER = "";
-$DB_PASSWORD = "";
+
 
 
 
