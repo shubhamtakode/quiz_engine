@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2016, 5:05:56 AM
+    Author     : WEB
+*/
+.tile {
+    background: rgba(247, 246, 246, 0.68);
+    margin-top:5px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    text-align: justify;
+    padding: 10px;
+}
+
+.question-desc {
+    min-height:  100px;
+}
+.question {
+    min-height:  200px;
+}
+.question-buttons {
+    text-align: center;
+}
+
+.question-buttons button {
+    margin: 5px;
+}
