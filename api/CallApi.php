@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: karwalkar
- * Date: 3/19/2016
- * Time: 10:28 PM
- */
 include_once "../include/LoginService.php";
 if(isset($_POST['service'])&&isset($_POST['method'])&&is_ajax()){
     $method=$_POST['method'];
