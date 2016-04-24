@@ -26,7 +26,6 @@ MyApp.config(['$routeProvider',
 
 MyApp.controller("MainController",['$scope','MainService','$q','$log','$cookies',function($scope,MainService,$q,$log,$cookies){
     $scope.main="dfsdf";
-
     $cookies.put("username", "roshan100");
     console.log($cookies.get("username"));
     MainService.highLightLink("#indexLink");
@@ -59,34 +58,6 @@ MyApp.controller("MainController",['$scope','MainService','$q','$log','$cookies'
      });
      */console.log("first me");
 }]);
-MyApp.controller("DashboardController",['$scope','MainService','$cookies','$log','$http',function($scope,MainService,$cookies,$log,$http){
-    MainService.highLightLink("#dashboard-link");
 
-}]);
-
-MyApp.controller("QuizController",['$scope','MainService','$location','$anchorScroll',function($scope,MainService,$location,$anchorScroll){
-    MainService.highLightLink("#quiz-link");
-}]);
-
-MyApp.controller("SettingsController",['$scope','MainService','$location','$anchorScroll',function($scope,MainService,$location,$anchorScroll){
-    MainService.highLightLink("#quiz-link");
-}]);
-
-MyApp.factory('UserService', [function() {
-    var sdo = {
-        isLogged: false,
-        username: ''
-    };
-    return sdo;
-}]);
-
-MyApp.service("MainService",function($resource){
-    return{
-        highLightLink:function(id){
-            $("#top-menu a").removeClass("active");
-            $(id).addClass("active");
-        }
-    };
-});
 
 
