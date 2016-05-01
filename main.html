@@ -19,6 +19,14 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="static/jquery/jquery-2.2.3.min.js" ></script>
     <script src="static/bootstrap/js/bootstrap.min.js" ></script>
+<script>
+    /*window.onload = downScripts;
+    function downScripts() {
+        var element = document.createElement("script");
+        element.src = "main.js";
+        document.body.appendChild(element);
+    }*/
+</script>
 </head>
 <!DOCTYPE html>
 <html>
@@ -105,6 +113,65 @@
 <script src="controllers/exam-controller.js"></script>
 <script src="controllers/quiz-controller.js"></script>
 <script src="controllers/settings-controller.js"></script>
+<script>
+    $(document).ready(function(){
+      /*  var param={
+            service:"LoginService",
+            method:"AuthenticateUser",
+            params:{
+               num1:100,
+                num2:200
+            }
+        };
+        $.ajax(
+                {
+                    type:"POST",
+                    url:'api/CallApi.php',
+                    data:{myData:JSON.stringify(param)},
+                    dataType:"json",
+                    success:function(output){
+                        var data2=new Object();
+                        //data2=JSON.parse(output.substring(output.length/2));
+                        console.log(JSON.parse(output));
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                }
+        );
+      */  var ourObj={
+          name:"sfsdf",
+        number:123,
+            arr:["a","b","c"],
+            info:{
+                name:"roshan",
+                rollno:"MIN123"
+            }
+        };
+        $.ajax({
+            url: 'process-data.php',
+            type: 'post',
+            data: {"points" : JSON.stringify(ourObj)},
+            success: function(data) {
+              console.log(data);
+            }
+        });
+    });
+    $('#form1').submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'abc.php',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                //$('#info1').html(data.msg);
+            }
+        });
+    });
 
+
+</script>
 </html>
 
