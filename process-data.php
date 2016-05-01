@@ -13,6 +13,12 @@ if (isset($_POST["points"])) {
     echo "Data is: " . $points->name . "number".$points->number;
     echo "info".$points->info->name;
     $arr1=$points->arr;
+    if($arr1[1]=='b'){
+        include "b.php";
+    }else{
+        include "a.php";
+    }
+
     echo "1 element".$arr1[1];
    // echo "Point 1: " . $points->arPoints[0]->x . ", " . $points->arPoints[0]->y;
 }

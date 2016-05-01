@@ -142,7 +142,7 @@
       */  var ourObj={
           name:"sfsdf",
         number:123,
-            arr:["a","b","c"],
+            arr:["a","a","c"],
             info:{
                 name:"roshan",
                 rollno:"MIN123"
@@ -154,6 +154,19 @@
             data: {"points" : JSON.stringify(ourObj)},
             success: function(data) {
               console.log(data);
+            }
+        });
+
+        var ourObj={
+            service:"LoginService",
+            method:"AuthenticateUser"
+        };
+        $.ajax({
+            url: 'api/CallApi.php',
+            type: 'post',
+            data: {"myData" : JSON.stringify(ourObj)},
+            success: function(data) {
+                console.log(data);
             }
         });
     });

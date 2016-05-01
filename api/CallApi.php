@@ -1,16 +1,15 @@
 <?php
-include_once "../services/LoginService.php";
-
-if(isset($_POST['service'])&&isset($_POST['method'])&&is_ajax()){
-    echo json_decode($_POST["myData"]);
-    $method=$_POST['method'];
-    $service=$_POST['service'];
-    switch($service){
+//var_dump($config); //to delete object after use
+if(isset($_POST['myData'])&&is_ajax()){
+    $mydata=json_decode($_POST["myData"]);
+    switch($mydata->service){
         case "LoginService":
-            switch($method){
+            //include file necessary for login services
+            require_once "../services/LoginService.php";
+            switch($mydata->method){
                 case "AuthenticateUser":
                     $loginObj=new LoginService();
-                    $loginObj->authenticateUser(json_decode($_POST["myData"]));
+                    $loginObj->authenticateUser();
                     break;
             }
             break;
