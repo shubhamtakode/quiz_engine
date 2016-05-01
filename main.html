@@ -115,31 +115,7 @@
 <script src="controllers/settings-controller.js"></script>
 <script>
     $(document).ready(function(){
-      /*  var param={
-            service:"LoginService",
-            method:"AuthenticateUser",
-            params:{
-               num1:100,
-                num2:200
-            }
-        };
-        $.ajax(
-                {
-                    type:"POST",
-                    url:'api/CallApi.php',
-                    data:{myData:JSON.stringify(param)},
-                    dataType:"json",
-                    success:function(output){
-                        var data2=new Object();
-                        //data2=JSON.parse(output.substring(output.length/2));
-                        console.log(JSON.parse(output));
-                    },
-                    error:function(err){
-                        console.log(err);
-                    }
-                }
-        );
-      */  var ourObj={
+      /*  var ourObj={
           name:"sfsdf",
         number:123,
             arr:["a","a","c"],
@@ -156,7 +132,7 @@
               console.log(data);
             }
         });
-
+*/
         var ourObj={
             service:"LoginService",
             method:"AuthenticateUser"
@@ -166,19 +142,21 @@
             type: 'post',
             data: {"myData" : JSON.stringify(ourObj)},
             success: function(data) {
-                console.log(data);
+                var d=JSON.parse(data);
+                console.log(d[0]);
             }
         });
     });
     $('#form1').submit(function(event) {
         event.preventDefault();
+ // make ajax call
         $.ajax({
             type: 'POST',
             url: 'abc.php',
             data: $(this).serialize(),
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                 console.log(data);
                 //$('#info1').html(data.msg);
             }
         });

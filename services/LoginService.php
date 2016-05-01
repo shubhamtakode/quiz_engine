@@ -5,9 +5,11 @@ class LoginService{
         $db = Database::connect();
         $arr['ab']="connected";
         $sql = 'SELECT * FROM domainusers';
+        $a=array();
         foreach ($db->query($sql) as $row) {
-            print_r($row);
+            array_push($a,$row);
         }
+        echo json_encode($a);
         Database::disconnect();
     }
     function Logout(){

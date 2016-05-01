@@ -1,3 +1,6 @@
 MYSQL database:
 1. Index Search Fields
 2. Avoid Using "SELECT *" in your Queries
+
+
+If EXISTS(SELECT * from Table WHERE col=’some value’)
