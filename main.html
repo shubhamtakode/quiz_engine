@@ -114,6 +114,7 @@
 <script src="controllers/exam-controller.js"></script>
 <script src="controllers/quiz-controller.js"></script>
 <script src="controllers/settings-controller.js"></script>
+<script src="domain_services.js"></script>
 <script>
     $(document).ready(function(){
       /*  var ourObj={
@@ -134,19 +135,6 @@
             }
         });
 */
-        var ourObj={
-            service:"LoginService",
-            method:"AuthenticateUser"
-        };
-        $.ajax({
-            url: 'api/CallApi.php',
-            type: 'post',
-            data: {"myData" : JSON.stringify(ourObj)},
-            success: function(data) {
-                var d=JSON.parse(data);
-                console.log(d);
-            }
-        });
     });
     $('#form1').submit(function(event) {
         event.preventDefault();

@@ -1,6 +1,5 @@
 <?php
 //var_dump($config); //to delete object after use
-include_once 'ConnectToDatabase.php';
 if(isset($_POST['myData'])&&is_ajax()){
     $mydata=json_decode($_POST["myData"]);
     switch($mydata->service){
@@ -15,7 +14,19 @@ if(isset($_POST['myData'])&&is_ajax()){
             }
             break;
         case "TestService":
+            break;
+        case "DomainService":
+            require_once "../services/DomainServices.php";
+            switch($mydata->method){
+                case "RegisterDomain":
+                    (new DomainService())->RegisterDomain($mydata->data);
+                    break;
+                case "VerifyDomain":
+                    (new DomainService())->VerifyDomain($mydata->data);
+                    break;
 
+
+            }
             break;
         default:
 
