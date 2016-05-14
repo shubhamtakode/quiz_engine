@@ -6,7 +6,6 @@ class SessionManager{
         //if user logged in
         return true;
     }
-
 }
 
 ?>

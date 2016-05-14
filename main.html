@@ -83,6 +83,7 @@
         </div><!--/.container-fluid -->
     </nav>
     <div ng-controller="MainController" >
+
             <ng-view>
             </ng-view>
 
@@ -143,7 +144,7 @@
             data: {"myData" : JSON.stringify(ourObj)},
             success: function(data) {
                 var d=JSON.parse(data);
-                console.log(d[0]);
+                console.log(d);
             }
         });
     });
@@ -161,8 +162,6 @@
             }
         });
     });
-
-
 </script>
 </html>
 

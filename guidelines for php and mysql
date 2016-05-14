@@ -4,3 +4,9 @@ MYSQL database:
 
 
 If EXISTS(SELECT * from Table WHERE col=’some value’)
+6. LIMIT 1 When Getting a Unique Row
+
+7. Hide MySQL from the Internet
+
+Most experienced database administrators and security personnel know to never host the database under the Web server's root. For Web-enabled applications, MySQL should be hidden behind a firewall and communication should only be enabled between application servers and your Web servers. Another option is to use MySQL's skip-networking option. When it is enabled, MySQL only listens for local socket connections and ignores all TCP ports.
+5. Index and Use Same Column Types for Joins

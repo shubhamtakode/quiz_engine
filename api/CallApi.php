@@ -1,5 +1,6 @@
 <?php
 //var_dump($config); //to delete object after use
+include_once 'ConnectToDatabase.php';
 if(isset($_POST['myData'])&&is_ajax()){
     $mydata=json_decode($_POST["myData"]);
     switch($mydata->service){
